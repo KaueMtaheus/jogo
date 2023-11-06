@@ -17,15 +17,18 @@ const loop = setInterval(() => {
 
     const pipePosition = pipe.offsetLeft;
     //pega o estilo que foi computado na imagem 
-    const marioPosition = window.getComputedStyle(mario).bottom;
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
 
     console.log(marioPosition);
 
-    if (pipePosition <= 120) {
+    if (pipePosition <= 122 && pipePosition > 0 && marioPosition < 100) {
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
+
+        mario.style.animation = 'none';
+        mario.style.bottom = `${marioPosition}px`;
 
     }
 
