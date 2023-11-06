@@ -8,22 +8,25 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="game-board">
-
+    <div class="game-board">    
+        
         <img src="imagens/clouds.png" class="clouds">
         <img src="imagens/mario.gif" class="mario">
         <img src="imagens/pipe.png" class="pipe">
         
         <audio id="jump-sound" src="audio/537151__dastudiospr__whohoo.mp3" preload="auto"></audio>
-
+        
+        <audio id="game-over-sound" src="audio/642431__thearchiveguy99__mariodeathsound.flac" preload="auto"></audio>
+        
         <div class="game-over-overlay">
             <div class="game-over-message">
                 <h1>Game Over</h1>
                 <button class="restart-button">Reiniciar</button>
             </div>
         </div>
-
+        
     </div>
-
+    <div class="score">Pontuação: <span id="score-value">0</span></div>
+    
 </body>
 </html>

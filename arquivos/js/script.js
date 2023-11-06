@@ -1,8 +1,20 @@
+let score = 0;
 const mario =  document.querySelector('.mario');
 const pipe =  document.querySelector('.pipe');
 const gameOverOverlay = document.querySelector('.game-over-overlay')
 const restartButton = document.querySelector('.restart-button');
-const jumpSound = document.getElementById('jump-sound')
+const jumpSound = document.getElementById('jump-sound');
+const gameOverSound = document.getElementById('game-over-sound');
+
+
+//função para som de "game-over"
+const playGameOverSound = () => {
+    // Reinicia o áudio, permitindo que ele seja reproduzido várias vezes seguidas
+    gameOverSound.currentTime = 0;
+    gameOverSound.play();
+}
+
+
 
 
 // Função para o som de pulo
@@ -45,6 +57,8 @@ const loop = setInterval(() => {
     if (!isGameOver && pipePosition <= 122 && pipePosition > 0 && marioPosition < 100) {
         isGameOver = true;  // Defina o jogo como encerrado
         clearInterval(loop);
+        playGameOverSound(); //chama a função para reproduzir som game over
+
 
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
@@ -58,7 +72,7 @@ const loop = setInterval(() => {
         
         gameOverOverlay.style.display = 'block';
     }
-
+    checkPipeOffScreen();
 }, 10)
 
 
@@ -68,3 +82,16 @@ restartButton.addEventListener('click', () => {
 
 //1° pressionar uma tecla
 document.addEventListener('keydown', jump);  
+
+
+function checkPipeOffScreen () {
+    if (pipe.offsetLeft  < 0) {
+        // O pipe saiu completamente da tela
+        score++;
+        updateScore();
+    }
+}
+
+function updateScore() {
+    document.getElementById('score-value').textContent = score;
+}
