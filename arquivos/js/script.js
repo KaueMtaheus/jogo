@@ -2,6 +2,21 @@ const mario =  document.querySelector('.mario');
 const pipe =  document.querySelector('.pipe');
 const gameOverOverlay = document.querySelector('.game-over-overlay')
 const restartButton = document.querySelector('.restart-button');
+const jumpSound = document.getElementById('jump-sound')
+
+
+// Função para o som de pulo
+const playJumpSound = () => {
+    jumpSound.currentTime = 0; // Reinicia o áudio, permitindo que ele seja reproduzido várias vezes seguidas
+    jumpSound.play();
+}
+
+// Evento de pressionar uma tecla
+document.addEventListener('keydown', () => {
+    jump();
+    playJumpSound(); // Chama a função para reproduzir o som de pulo
+});
+
 
 //2° vai disparar a funcao jump
 const jump = () => {     
