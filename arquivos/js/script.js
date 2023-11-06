@@ -1,4 +1,5 @@
 let score = 0;
+let pipesPassed = 0;
 const mario =  document.querySelector('.mario');
 const pipe =  document.querySelector('.pipe');
 const gameOverOverlay = document.querySelector('.game-over-overlay')
@@ -87,8 +88,12 @@ document.addEventListener('keydown', jump);
 function checkPipeOffScreen () {
     if (pipe.offsetLeft  < 0) {
         // O pipe saiu completamente da tela
-        score++;
-        updateScore();
+        pipesPassed++;
+        if (pipesPassed % 5 === 0) {
+            score += 5;
+            updateScore();
+        }
+        
     }
 }
 
