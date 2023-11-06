@@ -5,13 +5,13 @@
 }
 
 body {
-    background-color: burlywood;
+   background: linear-gradient(to bottom, #2e1603,#2e1603, #562d0d, #8a460e);
 }
 
 .game-board {
     width: 100%;
     height: 500px;
-    border-bottom: 20px solid #214001;
+    border-bottom: 40px solid #214001;
     margin: 0 auto;
     position: relative;
     overflow: hidden;  /*para tudo q sair do quadro n apareça*/
@@ -33,6 +33,12 @@ body {
 
 .jump {
     animation: jump 500ms ease-out; 
+}
+
+.clouds {
+    position: absolute;
+    width: 500px;
+    animation: clouds-animation 20s infinite linear;
 }
 
 @keyframes pipe-animation {
@@ -67,4 +73,14 @@ body {
         bottom: 0;             /*fim do pulo */
     }
 
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -500px;
+    }
+
+    to {
+        right: 100%;
+    }
 }
