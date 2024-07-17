@@ -50,7 +50,7 @@ seu-repositorio/
 
 ## Capturas de Tela
 
-![Captura de Tela](img/)
+![Mario Jump](arquivos/imagens/mario.gif)
 
 ### Sons:
 - Som de pulo: 537151__dastudiospr__whohoo.mp3
