@@ -50,6 +50,8 @@ seu-repositorio/
 
 ## Capturas de Tela
 
+![Captura de Tela](img/)
+
 ### Sons:
 - Som de pulo: 537151__dastudiospr__whohoo.mp3
 - Som de game over: 642431__thearchiveguy99__mariodeathsound.flac
