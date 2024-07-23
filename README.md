@@ -19,13 +19,18 @@ Game Jump é um jogo simples inspirado no clássico Mario. O objetivo é fazer o
 
 
 1. Clone o repositório:
+```bash
 git clone https://github.com/seu-usuario/seu-repositorio.git
+```
 
 2. Navegue até o diretório do projeto:
+```bash
 cd seu-repositorio
+```
 
 3. Abra o arquivo index.html no seu navegador:
 start index.html
+
 
 4. Pressione qualquer tecla para fazer o Mario pular e evitar os canos. 
 
